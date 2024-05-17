@@ -1,0 +1,3 @@
+/home/dianarehan/CA/CA thing/build/CMakeFiles/TestingProject.dir
+/home/dianarehan/CA/CA thing/build/CMakeFiles/edit_cache.dir
+/home/dianarehan/CA/CA thing/build/CMakeFiles/rebuild_cache.dir
