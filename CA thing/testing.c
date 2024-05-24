@@ -114,13 +114,7 @@ void execute(){
                     branchflag=1;
                     break;
             case 8 : exec.result = dec.r2 << dec.shamt; break;
-            case 9 :exec.result = dec.r2;
-                    int signbit = dec.r2 & 0b10000000000000000000000000000000;
-                    for (int i = 0; i < dec.shamt; i++) {
-                        exec.result >>= 1; 
-                        exec.result |= signbit; 
-                    }
-                    break;
+            case 9 :exec.result = dec.r2 >> dec.shamt;break;
             case 10:exec.result= dec.r2+dec.imm;break;
             case 11:exec.result=dec.r2+dec.imm;break;
         }
@@ -155,7 +149,7 @@ void writeBack(){
 
     printf("our reg value to be written in currently in the write back is %d\n", mem.r1);
     printf("our opcode is %d\n",mem.opcode);
-    if (mem.opcode!=-1 && mem.memloc!=-1 && mem.r1!=-1){
+    if (mem.opcode!=-1&& mem.r1!=-1){
         if(mem.opcode!=11 && mem.opcode!=10 && mem.opcode!=4 && mem.opcode!=7){
             if(mem.r1!=0){
                 printf("I am now writing back yay in clkcycle %d\n",clockCycles);
